@@ -9,4 +9,4 @@ function buyingFruits(fruit, grams, pricePerKg) {
   );
 }
 buyingFruits("orange", 2500, 1.8);
-buyingFruits('apple', 1563, 2.35)
+buyingFruits("apple", 1563, 2.35);
