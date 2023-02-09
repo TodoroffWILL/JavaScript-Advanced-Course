@@ -1,0 +1,24 @@
+{
+  "name": "javascript-advanced-course",
+  "version": "1.0.0",
+  "description": "This repository contains,advanced problems solved in JavaScript Advanced course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha './{,!(node_modules)/**}/*.test.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TodoroffWILL/JavaScript-Advanced-Course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TodoroffWILL/JavaScript-Advanced-Course/issues"
+  },
+  "homepage": "https://github.com/TodoroffWILL/JavaScript-Advanced-Course#readme",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+}

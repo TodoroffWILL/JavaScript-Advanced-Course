@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Custom Class</title>
+  </head>
+  <style>
+    #root {
+      display: flex;
+      justify-content: space-around;
+    }
+    .card {
+      /* Add shadows to create the "card" effect */
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    /* On mouse-over, add a deeper shadow */
+    .card:hover {
+      box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /* Add some padding inside the card container */
+    .container {
+      padding: 2px 16px;
+    }
+  </style>
+  <body>
+    <div id="root"></div>
+
+    <script src="employeeCard.js"></script>
+    <script>
+      let firstEmp = new EmployeeCard(
+        '#root',
+        'Doncho',
+        'Todorov',
+        'Junior Front-End Developer'
+      );
+      let secondEmp = new EmployeeCard(
+        '#root',
+        'Adelin',
+        'Ghanayem',
+        'God Java Developer,Data Architect,Best Brother,ШИКИ'
+      );
+      setTimeout(() => {
+        secondEmp.firstName = 'Шикитоо';
+        secondEmp.lastName = 'Ма мрази';
+        secondEmp.render();
+      }, 5000);
+    </script>
+  </body>
+</html>

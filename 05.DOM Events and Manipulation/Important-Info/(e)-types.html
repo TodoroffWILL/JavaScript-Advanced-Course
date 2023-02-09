@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Event Handling Types</h1>
+
+    <div id="number">0</div>
+    <button onclick="clearCounter()">Clear</button>
+    <button id="increment">+</button>
+    <button id="decrement">-</button>
+
+    <script>
+      const incrementElement = document.getElementById('increment'); // + button
+      const decrementElement = document.getElementById('decrement'); // - button
+
+      const resultElement = document.getElementById('number'); // DIV element
+      // 1. Attach the event to the HTML
+      function clearCounter() {
+        resultElement.textContent = 0;
+      }
+      // 2. Attach eventhandler by event property
+      incrementElement.onclick = () => {
+        let currentNumber = Number(resultElement.textContent);
+        resultElement.textContent = currentNumber + 1;
+      };
+      // 3. Attach evenlistener/eventhandler by method - PREFERED !
+      function decrement(e) {
+        console.log(e); // e = event object which returns alot of info about where its been clicked,position,target etc.
+        let currentNumber = Number(resultElement.textContent);
+        resultElement.textContent = currentNumber - 1;
+      }
+      decrementElement.addEventListener('click', decrement);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 onClick="onAddClick(event)">DOM Events</h1>
+    <ul id="movie-list">
+      <li>The Matrix</li>
+    </ul>
+    <input type="text" name="title" />
+    <button onClick="onAddClick(event)">Add</button>
+    <script>
+      function onAddClick(event) {
+        const moviesElements = document.querySelector('#movie-list');
+        const inputElement = document.querySelector('input[name="title"]');
+
+        const newLiElement = document.createElement('li');
+        newLiElement.textContent = inputElement.value;
+
+        moviesElements.appendChild(newLiElement);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="background: black; color: white; padding: 50px">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsam
+      dolorum aspernatur maiores, ex minima cupiditate, praesentium illum iure,
+      explicabo culpa. Illo eius quam doloremque, tempora sed odit sint
+      incidunt.
+    </div>
+    <div>
+      <input type="text" id="inputText" />
+      <button id="buttonOfInput" disabled>Click</button>
+    </div>
+    <script>
+      // First example
+      const divElement = document.querySelector('div');
+
+      const mouseOverDivEvent = (e) => {
+        let backgroundColor = e.currentTarget.style.backgroundColor;
+        if (backgroundColor == 'black') {
+          e.currentTarget.style.backgroundColor = 'purple';
+          e.currentTarget.style.color = 'black';
+        }
+        divElement.addEventListener('mouseout', (e) => {
+          e.currentTarget.style.backgroundColor = 'black';
+          e.currentTarget.style.color = 'white';
+        });
+      };
+      divElement.addEventListener('mouseover', mouseOverDivEvent);
+
+      // Second example
+      const inputElement = document.getElementById('inputText');
+      const buttonElement = document.getElementById('buttonOfInput');
+      inputElement.addEventListener('input', (e) => {
+        if (e.currentTarget.value.length > 0) {
+          buttonElement.removeAttribute('disabled');
+        } else {
+          buttonElement.setAttribute('disabled', true);
+        }
+      });
+
+      //Third Example
+      buttonElement.addEventListener('click', () => {
+        divElement.removeEventListener('mouseover', mouseOverDivEvent);
+      });
+
+
+      
+    </script>
+  </body>
+</html>

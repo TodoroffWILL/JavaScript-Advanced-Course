@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="head">Doncho</h1>
+    <p id="fancy-text">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos ut
+      obcaecati repellat veritatis quo hic, quibusdam quasi voluptas eius sit
+      ipsum rem iure autem quam animi voluptatem ab laborum totam!
+    </p>
+    <ul>
+      <li class="fancy-text">Some phrase here</li>
+      <li>And some here</li>
+    </ul>
+
+    <p class="fancy-text">Here some more</p>
+    <ol>
+      <li>By ALL</li>
+      <li>In OL list</li>
+    </ol>
+
+    <script>
+      // GET by unique ID
+      let headingElement = document.getElementById('head');
+      console.log(headingElement);
+      // GETS ALL elements by CLASS NAME
+      let textElements = document.getElementsByClassName('fancy-text');
+      console.log(textElements);
+      // GETS ALL elemnts by TAG NAME !
+      let liElements = document.getElementsByTagName('li');
+      console.log(liElements);
+      // GET ONE element by !CSS! selector
+      let fancyParagraph = document.querySelector('p.fancy-text');
+      console.log(fancyParagraph);
+      // GETS ALL elements by !CSS! selector
+      let orderedLists = document.querySelectorAll('ol li');
+      console.log(orderedLists);
+    </script>
+  </body>
+</html>

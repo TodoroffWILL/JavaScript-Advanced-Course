@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .fancy-text {
+        font-style: italic;
+        font-size: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .fancy {
+        background-color: aqua;
+        color: bisque;
+        padding: 10px;
+        display: inline-block;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      const divElement = document.createElement('div');
+      divElement.textContent = 'Some text here';
+      divElement.classList.add('fancy-text');
+
+      const rootElement = document.getElementById('root');
+      rootElement.appendChild(divElement);
+
+      divElement.addEventListener('mouseover', (e) => {
+        e.currentTarget.classList.add('fancy');
+        // Take all current classes
+        console.log(e.currentTarget.classList);
+      });
+      divElement.addEventListener('mouseout', (e) => {
+        e.currentTarget.classList.remove('fancy');
+      });
+    </script>
+  </body>
+</html>

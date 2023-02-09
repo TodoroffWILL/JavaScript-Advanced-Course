@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 onClick="onAddClick(event)">DOM Events</h1>
+    <ul id="movie-list">
+      <li>The Matrix</li>
+      <li>Fight Club</li>
+      <li>The Devil's Advocate</li>
+      <li>The Rite</li>
+      <li>Lord of the Rings</li>
+    </ul>
+    <a href="/" id="link">Link</a>
+    <script>
+      // Difference between parentElement and parentNode
+      const headingElement = document.querySelector('h1');
+      // THE LAST PARENT RETURNS "null"
+      console.log(headingElement.parentElement.parentElement.parentElement);
+      // BUT THIS LAST PARRENT RETURNS '#document'
+      console.log(headingElement.parentNode.parentNode.parentNode);
+
+      // // addEventListener and the "event";
+      // const movieDataElement = document.querySelectorAll('#movie-list li');
+      // movieDataElement.forEach((el) => {
+      //   el.addEventListener('click', (e) => {
+      //     e.currentTarget.style.textDecoration = 'line-through';
+      //   });
+      // });
+
+      // EVENT DELIGATION !!!
+
+      const movieDataElement = document.getElementById('movie-list');
+      movieDataElement.addEventListener('click', (e) => {
+        console.log('Clicked element:');
+        console.log(e.target);
+        console.log('Event attached element');
+        console.log(e.currentTarget);
+        if (e.target.tagName == 'LI') {
+          e.target.style.textDecoration = 'line-through';
+        } else {
+          e.currentTarget.style.background = 'purple';
+        }
+        // e.currentTarget.style.textDecoration = 'line-through';
+      });
+      const linkElement = document.getElementById('link');
+      linkElement.addEventListener('click', (e) => {
+        movieDataElement.textContent = 'Doncho';
+        e.preventDefault();
+        console.log('click');
+      });
+    </script>
+  </body>
+</html>
