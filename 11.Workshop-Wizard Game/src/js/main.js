@@ -1,7 +1,7 @@
 let state = initState();
 let game = initGameObjects();
 
-const availableKeys = ['KeyA', 'KeyW', 'KeyD', 'KeyS'];
+const availableKeys = ['KeyA', 'KeyW', 'KeyD', 'KeyS','Space'];
 
 document.addEventListener('keydown', (e) => {
   if (availableKeys.includes(e.code)) {

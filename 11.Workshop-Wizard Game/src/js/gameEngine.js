@@ -1,11 +1,19 @@
 function start(state, game) {
   game.createWizard(state.wizard);
-  window.requestAnimationFrame((timestamp) => gameLoop(state, game, timestamp));
+  window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
 
 function gameLoop(state, game, timestamp) {
   const { wizard } = state;
   const { wizardElement } = game;
+
+  modifyWizardPosition(state, game);
+
+  if (state.keys.Space) {
+    wizardElement.style.backgroundImage = "url('./css/images/wizard-fire.png')";
+  } else {
+    wizardElement.style.backgroundImage = "url('./css/images/wizard.png')";
+  }
 
   if (timestamp > state.bugStats.nextSpawnTimestamp) {
     game.createBug(state.bugStats);
@@ -23,7 +31,6 @@ function gameLoop(state, game, timestamp) {
   });
 
   // Render
-  modifyWizardPosition(state, game);
   wizardElement.style.left = wizard.posX + 'px';
   wizardElement.style.top = wizard.posY + 'px';
   window.requestAnimationFrame(gameLoop.bind(null, state, game));
