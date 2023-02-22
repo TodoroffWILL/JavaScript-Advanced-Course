@@ -18,6 +18,8 @@ body {
   top: 40%;
   transform: translate(-50%);
   padding: 25px;
+  border-style:solid;
+  border-radius: 30px;
 }
 .start-screen:hover {
   background-color: aquamarine;
