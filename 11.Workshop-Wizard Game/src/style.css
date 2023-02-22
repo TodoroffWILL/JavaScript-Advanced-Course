@@ -19,7 +19,15 @@ body {
   transform: translate(-50%);
   padding: 25px;
 }
-.start-screen:hover{
-    background-color: aquamarine;
-    cursor: pointer;
+.start-screen:hover {
+  background-color: aquamarine;
+  cursor: pointer;
+}
+.game-screen {
+  width: 100%;
+  height: 100%;
+  background-color: aqua;
+}
+.hidden {
+  display: none;
 }
