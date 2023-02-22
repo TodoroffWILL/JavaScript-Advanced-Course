@@ -12,14 +12,14 @@ body {
 .start-screen {
   font-size: 48px;
   width: 500px;
-  background-color: lightgreen;
+  background-color: rgb(146, 231, 146);
   text-align: center;
   position: absolute;
   left: 50%;
   top: 40%;
   transform: translate(-50%);
   padding: 25px;
-  border-style: solid;
+
   border-radius: 30px;
 }
 .start-screen:hover {
