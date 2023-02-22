@@ -22,6 +22,8 @@ function initState() {
       width: 20,
       height: 20,
       speed: 15,
+      nextSpawnTimestamp: 0,
+      fireRate: 450,
     },
     keys: {
       KeyA: false,
