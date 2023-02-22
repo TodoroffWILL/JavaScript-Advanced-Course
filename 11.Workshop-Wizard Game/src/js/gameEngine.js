@@ -6,8 +6,17 @@ function start(state, game) {
 function gameLoop(state, game) {
   const { wizard } = state;
   const { wizardElement } = game;
+  game.createBug(state.bugStats);
+  // Render
+  modifyWizardPosition(state, game);
+  wizardElement.style.left = wizard.posX + 'px';
+  wizardElement.style.top = wizard.posY + 'px';
 
-  // Move wizard;
+  window.requestAnimationFrame(gameLoop.bind(null, state, game));
+}
+
+function modifyWizardPosition(state, game) {
+  const { wizard } = state;
 
   if (state.keys.KeyD) {
     wizard.posX = Math.min(
@@ -27,10 +36,4 @@ function gameLoop(state, game) {
   if (state.keys.KeyA) {
     wizard.posX = Math.max(wizard.posX - wizard.speed, 0);
   }
-  wizardElement.style.left = wizard.posX + 'px';
-  wizardElement.style.top = wizard.posY + 'px';
-
-  // Render
-
-  window.requestAnimationFrame(gameLoop.bind(null, state, game));
 }
